@@ -1,0 +1,18 @@
+# Copyright (c) 2021 Gitpod GmbH. All rights reserved.
+# Licensed under the GNU Affero General Public License (AGPL).
+# See License.AGPL.txt in the project root for license information.
+
+packages:
+  - name: docker
+    type: docker
+    argdeps:
+      - imageRepoBase
+      - gitpodCodeCommit
+    config:
+      dockerfile: leeway.Dockerfile
+      metadata:
+        helm-component: workspace.gitpodWebImage
+      buildArgs:
+        GITPOD_CODE_COMMIT: ${gitpodCodeCommit}
+      image:
+        - ${imageRepoBase}/ide/gitpod-web:commit-${__git_commit}

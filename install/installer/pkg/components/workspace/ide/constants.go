@@ -6,6 +6,7 @@ package ide
 
 const (
 	CodeIDEImage                = "ide/code"
+	GitpodWebImage              = "ide/gitpod-web"
 	CodeIDEImageStableVersion   = "commit-8f9e9f93136a787fde5142f0708367ffaf46094c" // stable version that will be updated manually on demand
 	CodeDesktopIDEImage         = "ide/code-desktop"
 	CodeDesktopInsidersIDEImage = "ide/code-desktop-insiders"

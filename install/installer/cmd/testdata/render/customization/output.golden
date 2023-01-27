@@ -1772,6 +1772,9 @@ data:
             "codeImage": {
               "version": "test"
             },
+            "gitpodWebImage": {
+              "version": "test"
+            },
             "dockerUp": {
               "version": "test"
             },
@@ -4233,7 +4236,13 @@ data:
             "logo": "https://ide.gitpod.example.com/image/ide-logo/vscode.svg",
             "label": "Browser",
             "image": "eu.gcr.io/gitpod-core-dev/build/ide/code:commit-8f9e9f93136a787fde5142f0708367ffaf46094c",
-            "latestImage": "eu.gcr.io/gitpod-core-dev/build/ide/code:nightly"
+            "latestImage": "eu.gcr.io/gitpod-core-dev/build/ide/code:nightly",
+            "imageLayers": [
+              "eu.gcr.io/gitpod-core-dev/build/ide/gitpod-web:test"
+            ],
+            "latestImageLayers": [
+              "eu.gcr.io/gitpod-core-dev/build/ide/gitpod-web:test"
+            ]
           },
           "code-desktop": {
             "orderKey": "02",
@@ -5997,7 +6006,13 @@ data:
             "logo": "https://ide.gitpod.example.com/image/ide-logo/vscode.svg",
             "label": "Browser",
             "image": "eu.gcr.io/gitpod-core-dev/build/ide/code:commit-8f9e9f93136a787fde5142f0708367ffaf46094c",
-            "latestImage": "eu.gcr.io/gitpod-core-dev/build/ide/code:nightly"
+            "latestImage": "eu.gcr.io/gitpod-core-dev/build/ide/code:nightly",
+            "imageLayers": [
+              "eu.gcr.io/gitpod-core-dev/build/ide/gitpod-web:test"
+            ],
+            "latestImageLayers": [
+              "eu.gcr.io/gitpod-core-dev/build/ide/gitpod-web:test"
+            ]
           },
           "code-desktop": {
             "orderKey": "02",

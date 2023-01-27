@@ -7,9 +7,10 @@ defaultArgs:
   publishToNPM: true
   publishToJBMarketplace: true
   localAppVersion: unknown
-  codeCommit: 192057dab1df3cbfc64e83719306de0727a644e0
-  codeVersion: 1.74.3
+  codeCommit: 10aec2d8640231f41e8ba1365ebff780eafd26d7
+  codeVersion: 1.75.0
   codeQuality: stable
+  gitpodCodeCommit: 26a279c2893db0ec19b5084914ed86618c1dc9ac
   noVerifyJBPlugin: false
   intellijDownloadUrl: "https://download.jetbrains.com/idea/ideaIU-2022.3.1.tar.gz"
   golandDownloadUrl: "https://download.jetbrains.com/go/goland-2022.3.1.tar.gz"

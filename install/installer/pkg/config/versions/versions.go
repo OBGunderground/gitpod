@@ -44,6 +44,7 @@ type Components struct {
 	Usage                 Versioned `json:"usage"`
 	Workspace             struct {
 		CodeImage        Versioned `json:"codeImage"`
+		GitpodWebImage   Versioned `json:"gitpodWebImage"`
 		DockerUp         Versioned `json:"dockerUp"`
 		Supervisor       Versioned `json:"supervisor"`
 		Workspacekit     Versioned `json:"workspacekit"`

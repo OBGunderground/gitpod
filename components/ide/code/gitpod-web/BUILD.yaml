@@ -7,12 +7,12 @@ packages:
     type: docker
     argdeps:
       - imageRepoBase
-      - gitpodCodeCommit
+      - gitpodWebImageDigest
     config:
       dockerfile: leeway.Dockerfile
       metadata:
         helm-component: workspace.gitpodWebImage
       buildArgs:
-        GITPOD_CODE_COMMIT: ${gitpodCodeCommit}
+        IMAGE_DIGEST: ${gitpodWebImageDigest}
       image:
         - ${imageRepoBase}/ide/gitpod-web:commit-${__git_commit}

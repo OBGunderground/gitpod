@@ -10,7 +10,7 @@ defaultArgs:
   codeCommit: 10aec2d8640231f41e8ba1365ebff780eafd26d7
   codeVersion: 1.75.0
   codeQuality: stable
-  gitpodCodeCommit: 26a279c2893db0ec19b5084914ed86618c1dc9ac
+  gitpodWebImageDigest: sha256:cb627b98a59cac17a255aec2d4cab2df428ea46271ae6d67b4b66503a9764b9f
   noVerifyJBPlugin: false
   intellijDownloadUrl: "https://download.jetbrains.com/idea/ideaIU-2022.3.1.tar.gz"
   golandDownloadUrl: "https://download.jetbrains.com/go/goland-2022.3.1.tar.gz"

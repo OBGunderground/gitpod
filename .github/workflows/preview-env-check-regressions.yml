@@ -27,7 +27,7 @@ jobs:
               with:
                   name: ${{ github.event.inputs.name }}
                   sa_key: ${{ secrets.GCP_CREDENTIALS }}
-                  version: ${{ github.event.inputs.name.version}}
+                  version: ${{ github.event.inputs.version}}
             - name: Check
               run: |
                   echo "No regressions caught because I didn't check anything 🤡 Sleeping for 2 minutes."

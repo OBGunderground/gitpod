@@ -42,7 +42,7 @@ assertions:
     - "organisation:org1#owner@user:user1"
     - "organisation:org1#read_teams@user:user1"
     - "organisation:org1#write_teams@user:user1"
-    - "organisation:org1#read_workspace@user:user1"
+    - "organisation:org1#read_workspaces@user:user1"
 
   assertFalse:
     - "organisation:org2#owner@user:user1"

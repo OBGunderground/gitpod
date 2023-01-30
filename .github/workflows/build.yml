@@ -21,6 +21,7 @@ jobs:
       build_no_cache: ${{ steps.output.outputs.build_no_cache }}
       build_no_test: ${{ steps.output.outputs.build_no_test }}
       build_leeway_target: ${{ steps.output.outputs.build_leeway_target }}
+      with_large_vm: ${{ steps.output.outputs.with_large_vm }}
     steps:
       - name: "Determine Branch"
         id: branches
@@ -39,6 +40,7 @@ jobs:
             echo "build_no_cache=${{ contains(github.event.pull_request.body, '[x] leeway-no-cache') }}"
             echo "build_no_test=${{ contains(github.event.pull_request.body, '[x] /werft no-test') }}"
             echo "build_leeway_target=$(echo "$PR_DESC" | sed -n -e 's/^.*leeway-target=//p' | sed 's/\r$//')"
+            echo "with_large_vm=${{ contains(github.event.pull_request.body, '[X] /werft with-large-vm') }}"
           } >> $GITHUB_OUTPUT
 
   build-previewctl:
@@ -68,7 +70,7 @@ jobs:
 
           export LEEWAY_WORKSPACE_ROOT="$(pwd)"
           leeway build dev/preview/previewctl:docker -Dversion="${{needs.configuration.outputs.version}}"
-          echo "previewctl_hash=$(leeway describe dev/preview/previewctl:docker -t '{{ .Metadata.Version }}')" >> $GITHUB_OUTPUT
+          echo "previewctl_hash=$(leeway describe dev/preview/previewctl:docker -Dversion=${{needs.configuration.outputs.version}} -t '{{ .Metadata.Version }}')" >> $GITHUB_OUTPUT
 
   infrastructure:
     needs: [configuration, build-previewctl]
@@ -79,10 +81,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Create preview environment infrastructure
-        env:
-          TF_VAR_infra_provider: ${{ needs.configuration.outputs.preview_infra_provider }}
         id: create
         uses: ./.github/actions/preview-create
+        env:
+          TF_VAR_infra_provider: ${{ needs.configuration.outputs.preview_infra_provider }}
+          TF_VAR_with_large_vm: ${{ needs.configuration.outputs.with_large_vm }}
         with:
           sa_key: ${{ secrets.GCP_CREDENTIALS }}
           previewctl_hash: ${{ needs.build-previewctl.outputs.previewctl_hash }}

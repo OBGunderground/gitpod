@@ -6,4 +6,4 @@ jobs:
     steps:
     - uses: "authzed/action-spicedb-validate@v1"
       with:
-        validationfile: "install/installer/pkg/components/spicedb/data/schema.yaml"
+        validationfile: "./install/installer/pkg/components/spicedb/data/schema.yaml"

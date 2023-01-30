@@ -120,7 +120,11 @@ func getBootstrapFiles() ([]file, error) {
 			return nil, fmt.Errorf("failed to serialize contents: %w", err)
 		}
 
-		// we only want to populate spicedb with the schema - we don't want to persist relationships or other data
+		// We only want to populate spicedb with the schema - we don't want to persist relationships or other data
+		// This is because the relationships defined in this schema are used for validation, but can also be used to
+		// import data into a running instance - we do not want that.
+		// We cannot split the definitions across multiple files as that would prevent us from performing CI validation,
+		// and we do not want to duplicate the schema.
 		filesWithContents = append(filesWithContents, file{
 			name: f.Name(),
 			data: string(data),

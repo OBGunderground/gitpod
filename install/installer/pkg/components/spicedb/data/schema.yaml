@@ -33,8 +33,8 @@ schema: |-
 
   definition service {}
 
+# relationships to be used for assertions
 relationships: >-
-  # relationships to be used for assertions
   organisation:org1#owner@user:user1
 
 assertions:

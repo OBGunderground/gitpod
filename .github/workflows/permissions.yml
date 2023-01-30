@@ -1,0 +1,9 @@
+name: public-api-compatibility
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: "authzed/action-spicedb-validate@v1"
+      with:
+        validationfile: "install/installer/pkg/components/spicedb/data/schema.yaml"

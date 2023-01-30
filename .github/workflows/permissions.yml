@@ -1,4 +1,4 @@
-name: public-api-compatibility
+name: permissions
 on: pull_request
 jobs:
   build:

@@ -4,6 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: "authzed/action-spicedb-validate@v1"
       with:
-        validationfile: "./install/installer/pkg/components/spicedb/data/schema.yaml"
+        validationfile: "install/installer/pkg/components/spicedb/data/schema.yaml"
